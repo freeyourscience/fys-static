@@ -1,17 +1,151 @@
 ---
-
 ---
 
+<!DOCTYPE html>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="Find out which of your paywalled publications you can re-publish open access today for free and learn how to free your science."
+    />
+
+    <meta property="og:site_name" content="Free Your Science" />
+    <meta property="og:title" content="Free Your Science" />
+    <meta
+      property="og:description"
+      content="Find out which of your paywalled publications you can re-publish open access today for free and learn how to free your science."
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/favicon-16x16.png"
+    />
+    <link rel="manifest" href="static/site.webmanifest" />
+    <link rel="mask-icon" href="static/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="static/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="static/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Free Your Science</title>
+
+    <link rel="stylesheet" href="static/style.css" />
+
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="header--title">Free Your Science</a>
+      <nav class="nav-submenu--open">
+        <a
+          href="#"
+          class="nav-submenu__title"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >About</a
+        >
+        <ul class="nav-submenu__list">
+          <li>
+            <a href="/republishing" class="nav-submenu__item">Re-publishing</a>
+          </li>
+          <li><a href="/team" class="nav-submenu__item">Team</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <footer class="site-footer">
+      <small class="site-footer__smallprint">
+        Built and run by Daniel Haarhoff and Lukas Grossberger<br />
+        Contact us via
+        <a href="mailto:team@freeyourscience.org"> team@freeyourscience.org </a>
+        <br />
+        Find us on Twitter
+        <a href="https://twitter.com/freeyourscience" target="_blank"
+          >@freeyourscience</a
+        >
+      </small>
+      <small class="site-footer__smallprint">
+        Information on this site is accurate to the best of our knowledge but
+        should not be relied upon for legal advice.<br />
+        <a href="/privacy">Privacy Notice</a>
+      </small>
+    </footer>
+
+    <script>
+      var menuItems = document.querySelectorAll(".nav-submenu--open");
+      menuItems[0].className = "nav-submenu";
+      Array.prototype.forEach.call(menuItems, function (el, i) {
+        el.querySelector("a").addEventListener("click", function (event) {
+          if (this.parentNode.className == "nav-submenu") {
+            this.parentNode.className = "nav-submenu--open";
+            this.setAttribute("aria-expanded", "true");
+          } else {
+            this.parentNode.className = "nav-submenu";
+            this.setAttribute("aria-expanded", "false");
+          }
+          event.preventDefault();
+          return false;
+        });
+      });
+    </script>
+
+    <script>
+      var searchButtons = document.querySelectorAll(".search__button");
+      Array.prototype.forEach.call(searchButtons, function (el, i) {
+        el.addEventListener("click", function (event) {
+          if (
+            this.parentNode.querySelector(".search__input").value.length > 0
+          ) {
+            this.innerHTML = "<div class='loader'></div>";
+          }
+        });
+      });
+    </script>
+
+    <!-- Matomo -->
+    <script type="text/javascript">
+      var _paq = (window._paq = window._paq || []);
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setDoNotTrack", true]);
+      _paq.push(["disableCookies"]);
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      function matomo() {
+        var u = "//matomo.rknt.de/";
+        _paq.push(["setTrackerUrl", u + "matomo.php"]);
+        _paq.push(["setSiteId", "1"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.src = u + "matomo.js";
+        s.parentNode.insertBefore(g, s);
+      }
+      if (location.hostname === "freeyourscience.org") {
+        matomo();
+      }
+    </script>
+    <!-- End Matomo Code -->
+  </body>
 </html>
