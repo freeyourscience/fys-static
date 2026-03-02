@@ -1,0 +1,81 @@
+@use 'utils';
+@use 'settings';
+
+.landing--search--container {
+  background: settings.$color-background;
+
+  margin-left: -1rem;
+  margin-right: -1rem;
+
+  padding-top: 3rem;
+  padding-bottom: 3.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .search {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: utils.px-to-rem(settings.$breakpoint)) {
+    margin-left: -100%;
+    margin-right: -100%;
+    padding-left: 100%;
+    padding-right: 100%;
+  }
+}
+
+.search {
+  display: flex;
+  margin-bottom: 6rem;
+  flex-wrap: wrap;
+}
+
+.search__input {
+  flex-grow: 1;
+  border: 1px solid settings.$color-background;
+  padding: utils.px-to-rem(12px) 1rem utils.px-to-rem(10px);
+}
+
+.search__button {
+  flex-shrink: 0;
+  border: 1px solid settings.$color-blue;
+  padding: utils.px-to-rem(3px) 1rem 0;
+  color: white;
+  background-color: settings.$color-blue;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 5.5rem;
+}
+
+.search__small {
+  color: settings.$color-text-secondary;
+  flex: 0 0 100%;
+  padding: 0.5rem;
+}
+
+.search__progressbar__container {
+  z-index: 99999;
+  background: transparent;
+  opacity: 1;
+  transition: opacity 0.4s linear 0.4s;
+  flex: 0 0 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  outline: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.search__progressbar__progress {
+  background-color: settings.$color-blue;
+  width: 100%;
+  box-shadow: 0 0 10px settings.$color-blue;
+  transition: width 0.4s ease;
+  outline: 2px solid transparent;
+  box-sizing: border-box;
+  height: 2px;
+}
+
+.loader {
+  font-size: 0.2rem;
+  margin: auto;
+}

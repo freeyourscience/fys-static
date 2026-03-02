@@ -1,0 +1,159 @@
+@use 'settings';
+@use 'utils';
+
+html {
+  font-size: (settings.$font-measure / 16px) * 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, sans-serif;
+  color: settings.$color-text;
+  padding: 0 1rem;
+
+  @media screen and (min-width: utils.px-to-rem(settings.$breakpoint)) {
+    overflow-x: hidden;
+  }
+}
+
+main {
+  max-width: utils.px-to-rem(settings.$main-column-width);
+  margin: 0 auto 10rem;
+}
+
+footer {
+  text-align: center;
+  color: settings.$color-text-secondary;
+  margin: 0 auto 3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+
+h1,
+h2 {
+  margin-top: 4rem;
+}
+
+h3,
+h4,
+h5 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  @include utils.f1;
+  margin-bottom: 4rem;
+}
+
+h2 {
+  @include utils.f2;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  @include utils.f3;
+}
+
+h4 {
+  @include utils.f4;
+}
+
+h5 {
+  @include utils.f5;
+}
+
+p {
+  @include utils.f5;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+small,
+small > p,
+small li {
+  @include utils.f6;
+  margin-top: 0;
+}
+
+a:link,
+a:visited {
+  color: settings.$color-blue;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: settings.$color-blue;
+  }
+}
+
+a.secondary:link,
+a.secondary:visited {
+  color: settings.$color-text-secondary;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: settings.$color-blue;
+  }
+}
+
+dl,
+ul,
+ol {
+  margin: 0 0 1.5rem;
+}
+
+li {
+  @include utils.f5;
+  margin: 0 0 0.5rem;
+}
+
+dt {
+  @include utils.f5;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+dd {
+  @include utils.f5;
+  margin: 0 0 1.5rem 1rem;
+}
+
+.video {
+  width: 100%;
+  height: 40vh;
+  margin-bottom: 1rem;
+  background-color: settings.$color-background;
+}
+
+.hidden {
+  display: none;
+}
+
+.material-icons {
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.site-footer {
+  color: settings.$color-text-secondary;
+  text-align: left;
+  margin: 0 auto;
+  max-width: utils.px-to-rem(settings.$main-column-width);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.5rem;
+}
+
+.site-footer__smallprint {
+  @include utils.f7;
+  display: block;
+  margin-bottom: 1rem;
+}

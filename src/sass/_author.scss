@@ -1,0 +1,104 @@
+@use 'utils';
+@use 'settings';
+
+$button-width: 9rem;
+
+main.author {
+  max-width: utils.px-to-rem(900px);
+}
+
+.publications__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-top: 1px solid settings.$color-background;
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+  grid-row-gap: 0.5rem;
+  row-gap: 0.5rem;
+
+  @media screen and (min-width: utils.px-to-rem(settings.$breakpoint)) {
+    grid-template-columns: minmax(0, 1fr) $button-width;
+    grid-column-gap: 1rem;
+    column-gap: 1rem;
+  }
+}
+
+.publications__item--full-width {
+  border-top: 1px solid settings.$color-background;
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.publications__item__info {
+  max-width: 100%;
+}
+
+.publications__item__buttons {
+  max-width: 100%;
+  text-align: center;
+}
+
+.pathway__button {
+  padding: 0.75rem 0.75rem 0.75rem;
+  @include utils.f4;
+  cursor: pointer;
+  line-height: 1;
+  width: 100%;
+  max-width: $button-width;
+  color: white;
+  font-weight: bold;
+
+  .material-icons {
+    margin-bottom: 1px;
+  }
+}
+
+.pathway__button--assisted {
+  border: 1px solid settings.$color-green;
+  background-color: settings.$color-green;
+}
+
+.pathway__button--manual {
+  border: 1px solid settings.$color-dark-gray;
+  background-color: settings.$color-dark-gray;
+}
+
+.publications__item__info__title {
+  @include utils.f4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.publications__item__info__metadata {
+  margin-bottom: 1rem;
+}
+
+a.howto-link {
+  color: settings.$color-green;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: block;
+
+  &:hover {
+    color: settings.$color-green;
+  }
+}
+
+.publications__item__info__pathway {
+  p {
+    margin-bottom: 0.5rem;
+  }
+  p + p {
+    margin-top: 1rem;
+  }
+}
+
+.author__otherresults {
+  .publications__item__info__journal {
+    font-weight: normal;
+  }
+}
