@@ -1,151 +1,95 @@
 ---
+import Base from '../layouts/base.astro'
 ---
+<Base>
+<main>
+  <h1 class="landing--title">
+    Re-publish your paywalled work open access today for free
+  </h1>
+  <div class="landing--search--container">
+    <p class="landing--blurb">
+      Find publications of yours with free open access pathways.
+    </p>
+    <form method="GET" action="/search" id="search-form" class="search">
+      <input
+        type="text"
+        name="query"
+        class="search__input"
+        placeholder="Author name, ORCID or DOI"
+        required
+      />
+      <button type="submit" class="search__button">Search</button>
+    </form>
+  </div>
+  <section class="landing--section">
+    <h2>What we provide for authors</h2>
+    <p>
+      Free Your Science is out to show authors like you which of your paywalled
+      publications you can re-publish open access today for free and how to do
+      it. We operate this site for free because we believe in open science.
+    </p>
 
-<!DOCTYPE html>
+    <div class="for-authors--item">
+      <h3 class="for-authors--heading">Find your paywalled publications</h3>
+      <img
+        class="for-authors--icon"
+        src="/static/img/search-paywalled.svg"
+        alt=""
+      />
+      <p class="for-authors--text">
+        Publishers can keep your publications behind paywalls. This limits your
+        scientific reach to readers with paid subscriptions. We help you to
+        identify these publications.
+      </p>
+    </div>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <div class="for-authors--item">
+      <h3 class="for-authors--heading">Identify open access pathways</h3>
+      <img class="for-authors--icon" src="/static/img/pathway.svg" alt="" />
+      <p class="for-authors--text">
+        Many publishers allow open access re-publication of your work, free of
+        charge, today. Using the Sherpa Romeo publisher policy database, we find
+        the best pathway for your work to become open access.
+      </p>
+    </div>
 
-    <meta
-      name="description"
-      content="Find out which of your paywalled publications you can re-publish open access today for free and learn how to free your science."
-    />
+    <div class="for-authors--item">
+      <h3 class="for-authors--heading">Re-publish open access</h3>
+      <img class="for-authors--icon" src="/static/img/rocket.svg" alt="" />
+      <p class="for-authors--text">
+        Depending on the identified pathway you can deposit your manuscript in
+        places like arXiv, PubMed, or Zenodo. We show you the way to open access
+        re-publication with just a few steps.
+      </p>
+    </div>
+  </section>
+  <section class="landing--section">
+    <h2>Our partners</h2>
+    <p class="data-partners__text">
+      As part of a strong open science ecosystem, freeyourscience.org stands on
+      the shoulders of the following kind partners that provide helpful APIs and
+      datasets.
+    </p>
+    <div class="data-partners__logos">
+      <a href="https://unpaywall.org/" target="_blank" rel="noopener">
+        <img src="/static/img/unpaywall.png" alt="unpaywall.org" />
+      </a>
+      <a href="https://shareyourpaper.org/" target="_blank" rel="noopener">
+        <img src="/static/img/shareyourpaper.png" alt="shareyourpaper.org" />
+      </a>
+      <a href="https://api.semanticscholar.org/" target="_blank" rel="noopener">
+        <img src="/static/img/s2.png" alt="Semantic Scholar" />
+      </a>
+    </div>
 
-    <meta property="og:site_name" content="Free Your Science" />
-    <meta property="og:title" content="Free Your Science" />
-    <meta
-      property="og:description"
-      content="Find out which of your paywalled publications you can re-publish open access today for free and learn how to free your science."
-    />
-
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="static/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="static/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="static/favicon-16x16.png"
-    />
-    <link rel="manifest" href="static/site.webmanifest" />
-    <link rel="mask-icon" href="static/safari-pinned-tab.svg" color="#5bbad5" />
-    <link rel="shortcut icon" href="static/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="msapplication-config" content="static/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
-
-    <title>Free Your Science</title>
-
-    <link rel="stylesheet" href="static/style.css" />
-
-  </head>
-
-  <body>
-    <header>
-      <a href="/" class="header--title">Free Your Science</a>
-      <nav class="nav-submenu--open">
-        <a
-          href="#"
-          class="nav-submenu__title"
-          aria-haspopup="true"
-          aria-expanded="false"
-          >About</a
-        >
-        <ul class="nav-submenu__list">
-          <li>
-            <a href="/republishing" class="nav-submenu__item">Re-publishing</a>
-          </li>
-          <li><a href="/team" class="nav-submenu__item">Team</a></li>
-        </ul>
-      </nav>
-    </header>
-
-
-    <footer class="site-footer">
-      <small class="site-footer__smallprint">
-        Built and run by Daniel Haarhoff and Lukas Grossberger<br />
-        Contact us via
-        <a href="mailto:team@freeyourscience.org"> team@freeyourscience.org </a>
-        <br />
-        Find us on Twitter
-        <a href="https://twitter.com/freeyourscience" target="_blank"
-          >@freeyourscience</a
-        >
-      </small>
-      <small class="site-footer__smallprint">
-        Information on this site is accurate to the best of our knowledge but
-        should not be relied upon for legal advice.<br />
-        <a href="/privacy">Privacy Notice</a>
-      </small>
-    </footer>
-
-    <script>
-      var menuItems = document.querySelectorAll(".nav-submenu--open");
-      menuItems[0].className = "nav-submenu";
-      Array.prototype.forEach.call(menuItems, function (el, i) {
-        el.querySelector("a").addEventListener("click", function (event) {
-          if (this.parentNode.className == "nav-submenu") {
-            this.parentNode.className = "nav-submenu--open";
-            this.setAttribute("aria-expanded", "true");
-          } else {
-            this.parentNode.className = "nav-submenu";
-            this.setAttribute("aria-expanded", "false");
-          }
-          event.preventDefault();
-          return false;
-        });
-      });
-    </script>
-
-    <script>
-      var searchButtons = document.querySelectorAll(".search__button");
-      Array.prototype.forEach.call(searchButtons, function (el, i) {
-        el.addEventListener("click", function (event) {
-          if (
-            this.parentNode.querySelector(".search__input").value.length > 0
-          ) {
-            this.innerHTML = "<div class='loader'></div>";
-          }
-        });
-      });
-    </script>
-
-    <!-- Matomo -->
-    <script type="text/javascript">
-      var _paq = (window._paq = window._paq || []);
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-      _paq.push(["setDoNotTrack", true]);
-      _paq.push(["disableCookies"]);
-      _paq.push(["trackPageView"]);
-      _paq.push(["enableLinkTracking"]);
-      function matomo() {
-        var u = "//matomo.rknt.de/";
-        _paq.push(["setTrackerUrl", u + "matomo.php"]);
-        _paq.push(["setSiteId", "1"]);
-        var d = document,
-          g = d.createElement("script"),
-          s = d.getElementsByTagName("script")[0];
-        g.type = "text/javascript";
-        g.async = true;
-        g.src = u + "matomo.js";
-        s.parentNode.insertBefore(g, s);
-      }
-      if (location.hostname === "freeyourscience.org") {
-        matomo();
-      }
-    </script>
-    <!-- End Matomo Code -->
-  </body>
-</html>
+    <h2>Open Source</h2>
+    <p>
+      We believe that open source is a critical part of open science.
+      This project's source code is therefore fully open source and MIT licensed.
+    </p>
+    <p>
+      The code for this service and our other efforts are evailable at <a href="https://github.com/freeyourscience">github.com/freeyourscience</a>.
+    </p>
+  </section>
+</main>
+</Base>
