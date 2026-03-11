@@ -11,6 +11,11 @@ Dependencies:
 - pnpm
 - node
 
-You can use `mise` to install these.
+You can use [mise](https://mise.jdx.dev/getting-started.html) to install these with
+```
+mise use node@latest
+mise use pnpm@latest
+mise exec -- make dev
+```
 
 `make dev` will launch a dev server.
