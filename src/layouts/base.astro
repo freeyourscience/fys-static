@@ -1,5 +1,6 @@
 ---
 import '../sass/style.scss'
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -25,25 +26,25 @@ import '../sass/style.scss'
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="static/apple-touch-icon.png"
+      href={`${base}static/apple-touch-icon.png`}
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="static/favicon-32x32.png"
+      href={`${base}static/favicon-32x32.png`}
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="static/favicon-16x16.png"
+      href={`${base}static/favicon-16x16.png`}
     />
-    <link rel="manifest" href="static/site.webmanifest" />
-    <link rel="mask-icon" href="static/safari-pinned-tab.svg" color="#5bbad5" />
-    <link rel="shortcut icon" href="static/favicon.ico" />
+    <link rel="manifest" href={`${base}static/site.webmanifest`} />
+    <link rel="mask-icon" href={`${base}static/safari-pinned-tab.svg`} color="#5bbad5" />
+    <link rel="shortcut icon" href={`${base}static/favicon.ico`} />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="msapplication-config" content="static/browserconfig.xml" />
+    <meta name="msapplication-config" content={`${base}static/browserconfig.xml`} />
     <meta name="theme-color" content="#ffffff" />
 
     <title>Free Your Science</title>
@@ -53,7 +54,7 @@ import '../sass/style.scss'
 
   <body>
     <header>
-      <a href="/" class="header--title">Free Your Science</a>
+      <a href={base} class="header--title">Free Your Science</a>
       <nav class="nav-submenu--open">
         <a
           href="#"
@@ -64,9 +65,9 @@ import '../sass/style.scss'
         >
         <ul class="nav-submenu__list">
           <li>
-            <a href="/republishing" class="nav-submenu__item">Re-publishing</a>
+            <a href={`${base}republishing`} class="nav-submenu__item">Re-publishing</a>
           </li>
-          <li><a href="/team" class="nav-submenu__item">Team</a></li>
+          <li><a href={`${base}team`} class="nav-submenu__item">Team</a></li>
         </ul>
       </nav>
     </header>
@@ -87,7 +88,7 @@ import '../sass/style.scss'
       <small class="site-footer__smallprint">
         Information on this site is accurate to the best of our knowledge but
         should not be relied upon for legal advice.<br />
-        <a href="/privacy">Privacy Notice</a>
+        <a href={`${base}privacy`}>Privacy Notice</a>
       </small>
     </footer>
 
