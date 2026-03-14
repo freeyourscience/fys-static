@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/base.astro'
+const base = import.meta.env.BASE_URL;
 ---
 <Base>
 <main>
@@ -90,7 +91,7 @@ import Base from '../layouts/base.astro'
             At the same time, having a free copy available, more people are able to find your research.
         </p>
         <p>
-            We have also written a step-by-step <a href="/how-to">how-to guide</a> for re-publishing.
+            We have also written a step-by-step <a href={`${base}how-to`}>how-to guide</a> for re-publishing.
         </p>
 
 

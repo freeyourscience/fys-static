@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/base.astro'
+const base = import.meta.env.BASE_URL;
 ---
 <Base>
 <main>
@@ -10,7 +11,7 @@ import Base from '../layouts/base.astro'
     <p class="landing--blurb">
       Find publications of yours with free open access pathways.
     </p>
-    <form method="GET" action="/search" id="search-form" class="search">
+    <form method="GET" action={`${base}search`} id="search-form" class="search">
       <input
         type="text"
         name="query"
@@ -33,7 +34,7 @@ import Base from '../layouts/base.astro'
       <h3 class="for-authors--heading">Find your paywalled publications</h3>
       <img
         class="for-authors--icon"
-        src="/static/img/search-paywalled.svg"
+        src={`${base}static/img/search-paywalled.svg`}
         alt=""
       />
       <p class="for-authors--text">
@@ -45,7 +46,7 @@ import Base from '../layouts/base.astro'
 
     <div class="for-authors--item">
       <h3 class="for-authors--heading">Identify open access pathways</h3>
-      <img class="for-authors--icon" src="/static/img/pathway.svg" alt="" />
+      <img class="for-authors--icon" src={`${base}static/img/pathway.svg`} alt="" />
       <p class="for-authors--text">
         Many publishers allow open access re-publication of your work, free of
         charge, today. Using the Sherpa Romeo publisher policy database, we find
@@ -55,7 +56,7 @@ import Base from '../layouts/base.astro'
 
     <div class="for-authors--item">
       <h3 class="for-authors--heading">Re-publish open access</h3>
-      <img class="for-authors--icon" src="/static/img/rocket.svg" alt="" />
+      <img class="for-authors--icon" src={`${base}static/img/rocket.svg`} alt="" />
       <p class="for-authors--text">
         Depending on the identified pathway you can deposit your manuscript in
         places like arXiv, PubMed, or Zenodo. We show you the way to open access
@@ -72,13 +73,13 @@ import Base from '../layouts/base.astro'
     </p>
     <div class="data-partners__logos">
       <a href="https://unpaywall.org/" target="_blank" rel="noopener">
-        <img src="/static/img/unpaywall.png" alt="unpaywall.org" />
+        <img src={`${base}static/img/unpaywall.png`} alt="unpaywall.org" />
       </a>
       <a href="https://shareyourpaper.org/" target="_blank" rel="noopener">
-        <img src="/static/img/shareyourpaper.png" alt="shareyourpaper.org" />
+        <img src={`${base}static/img/shareyourpaper.png`} alt="shareyourpaper.org" />
       </a>
       <a href="https://api.semanticscholar.org/" target="_blank" rel="noopener">
-        <img src="/static/img/s2.png" alt="Semantic Scholar" />
+        <img src={`${base}static/img/s2.png`} alt="Semantic Scholar" />
       </a>
     </div>
 

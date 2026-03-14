@@ -1,13 +1,14 @@
 ---
 import Base from '../layouts/base.astro'
+const base = import.meta.env.BASE_URL;
 ---
 <Base>
 <main>
     <section>
         <h1>The Team</h1>
         <div class="team-portraits">
-            <img src="/static/img/daniel.jpg" alt="Daniel" />
-            <img src="/static/img/lukas.jpg" alt="Lukas" />
+            <img src={`${base}static/img/daniel.jpg`} alt="Daniel" />
+            <img src={`${base}static/img/lukas.jpg`} alt="Lukas" />
         </div>
         <p>
             We are Daniel and Lukas, two open science enthusiasts.
