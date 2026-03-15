@@ -1,14 +1,14 @@
 @use "settings";
 
 @function px-to-rem($px) {
-  @return ($px / settings.$font-measure) * 1rem;
+  @return calc($px / settings.$font-measure) * 1rem;
 }
 
 @mixin font-sizing($font-size, $line-height) {
   $font-size-in-rem: px-to-rem($font-size);
 
   font-size: $font-size-in-rem;
-  line-height: calc($line-height/ $font-size);
+  line-height: calc($line-height / $font-size);
 }
 
 @mixin f1 {
