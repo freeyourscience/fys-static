@@ -14,6 +14,10 @@ preview: node_modules
 astro: node_modules
 	npx astro
 
+.PHONY: check
+check: node_modules
+	npx astro check
+
 node_modules: package.json pnpm-lock.yaml
 	pnpm install --frozen-lockfile
 

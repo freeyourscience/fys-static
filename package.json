@@ -3,7 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/check": "^0.9.7",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "sass-embedded": "^1.97.3"
