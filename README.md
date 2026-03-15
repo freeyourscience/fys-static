@@ -12,10 +12,13 @@ Dependencies:
 - node
 
 You can use [mise](https://mise.jdx.dev/getting-started.html) to install these with
+
 ```
 mise use node@latest
 mise use pnpm@latest
 mise exec -- make dev
 ```
+
+If you have already got `mise` configured on your system running `mise install` should suffice.
 
 `make dev` will launch a dev server.
